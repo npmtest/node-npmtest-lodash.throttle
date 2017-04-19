@@ -1,1 +1,40 @@
-{     "devDependencies": {         "lodash.throttle": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-lodash.throttle",     "homepage": "https://github.com/npmtest/node-npmtest-lodash.throttle",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-lodash.throttle.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [lodash.throttle (v4.1.1)](https://lodash.com/)  [![npm package](https://img.shields.io/npm/v/npmtest-lodash.throttle.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-lodash.throttle) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-lodash.throttle.svg)](https://travis-ci.org/npmtest/node-npmtest-lodash.throttle)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "lodash.throttle": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-lodash.throttle",
+    "keywords": [
+        "coverage",
+        "test",
+        "lodash.throttle"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_lodash.throttle.js",
+    "name": "npmtest-lodash.throttle",
+    "nameAlias": "npmtest_lodash_throttle",
+    "nameOriginal": "npmtest-lodash.throttle",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-lodash.throttle.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
